@@ -15,7 +15,7 @@ Create a `.env` file in the project root for Docker:
 
 ```bash
 # Copy the template
-cp .env.docker.example .env
+cp .env.example .env
 
 # Edit the .env file and set your password
 nano .env
@@ -49,7 +49,6 @@ That's it! The application will be available at: **http://localhost:8000**
 
 - **API**: http://localhost:8000
 - **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
 
 ### 4. Generate API Key
 
@@ -153,7 +152,7 @@ The application reads environment variables from a `.env` file in the project ro
 
 ```bash
 # Copy the template
-cp .env.docker.example .env
+cp .env.example .env
 
 # Edit with your credentials
 nano .env
@@ -172,15 +171,15 @@ DATABASE_NAME=task_db                 # Database name
 ⚠️ **Security Notes**:
 - Never commit `.env` file to Git (already in `.gitignore`)
 - Use strong passwords in production
-- The `.env.docker.example` is a template only
+- The `.env.example` is a template only
 - Each developer/environment should have their own `.env` file
 
 ## Database Persistence
 
 MySQL data is stored in a Docker volume named `mysql_data`. This means:
-- ✅ Data persists across container restarts
-- ✅ Data survives `docker-compose down`
-- ❌ Data is deleted with `docker-compose down -v`
+- Data persists across container restarts
+- Data survives `docker-compose down`
+- Data is deleted with `docker-compose down -v`
 
 ### Reset Database
 ```bash
@@ -325,12 +324,4 @@ docker system prune -a
          └──────────────────────────────┘
 ```
 
-## Benefits of Docker Setup
-
-✅ **No local installation needed** - Python, MySQL, dependencies all in containers
-✅ **Consistent environment** - Works the same on all machines
-✅ **Easy setup** - One command to start everything
-✅ **Isolated** - Doesn't affect your local system
-✅ **Production-ready** - Can deploy the same way
-✅ **Easy cleanup** - Remove everything with one command
 

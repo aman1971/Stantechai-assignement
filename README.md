@@ -4,18 +4,18 @@ A FastAPI-based CRUD application for managing tasks with MySQL database backend,
 
 ## Features
 
-- ✅ Full CRUD operations (Create, Read, Update, Delete)
-- ✅ **API Key Authentication** for secure access
-- ✅ **Pagination** with metadata (page, page_size, total_items, total_pages)
-- ✅ **Filtering** by completion status
-- ✅ **Sorting** by creation date (newest first)
-- ✅ MySQL database integration with SQLAlchemy ORM
-- ✅ MVC (Model-View-Controller) architecture
-- ✅ Environment-based configuration with .env
-- ✅ Alembic database migrations
-- ✅ Automatic API documentation (Swagger UI & ReDoc)
-- ✅ Comprehensive unit and integration tests
-- ✅ Proper error handling and HTTP status codes
+- Full CRUD operations (Create, Read, Update, Delete)
+- **API Key Authentication** for secure access
+- **Pagination** with metadata (page, page_size, total_items, total_pages)
+- **Filtering** by completion status
+- **Sorting** by creation date (newest first)
+- MySQL database integration with SQLAlchemy ORM
+- MVC (Model-View-Controller) architecture
+- Environment-based configuration with .env
+- Alembic database migrations
+- Automatic API documentation (Swagger UI)
+- Comprehensive unit and integration tests
+- Proper error handling and HTTP status codes
 
 ## Requirements
 
@@ -34,7 +34,7 @@ If you have Docker installed, follow these steps:
 
 ```bash
 # 1. Copy environment template
-cp .env.docker.example .env
+cp .env.example .env
 
 # 2. Edit .env and set your password
 nano .env
@@ -46,7 +46,7 @@ docker-compose up -d --build
 # Swagger UI: http://localhost:8000/docs
 ```
 
-⚠️ **Important**: Make sure to set a secure password in the `.env` file before running!
+**Important**: Make sure to set a secure password in the `.env` file before running!
 
 For detailed Docker instructions, see [DOCKER_SETUP.md](DOCKER_SETUP.md)
 
@@ -148,7 +148,6 @@ Save the generated key - you'll need it for all subsequent requests!
 All API endpoints are automatically documented and available at:
 
 - **Swagger UI**: http://localhost:8000/docs (Interactive, test endpoints directly)
-- **ReDoc**: http://localhost:8000/redoc (Clean, readable documentation)
 
 ### 🔑 Using API Key Authentication
 
@@ -326,11 +325,11 @@ database_url = settings.database_url
 
 ## Security Features
 
-- ✅ API Key authentication on all task endpoints
-- ✅ Secure key generation using `secrets` module
-- ✅ Keys stored with usage tracking
-- ✅ Keys can be deactivated without deletion
-- ✅ Environment variables for sensitive data
+- API Key authentication on all task endpoints
+- Secure key generation using `secrets` module
+- Keys stored with usage tracking
+- Keys can be deactivated without deletion
+- Environment variables for sensitive data
 
 ## Project Architecture
 
@@ -371,10 +370,3 @@ alembic downgrade base
 alembic upgrade head
 ```
 
-## License
-
-This project is for educational and evaluation purposes.
-
-## Version
-
-**v2.0.0** - With API Key Authentication, Pagination, Filtering, and Sorting
